@@ -14,6 +14,7 @@ function toUint8Array(buffer) {
 export class WintersmithAdaptor extends Plugin {
 
   constructor(config = {plugins: Object.create(null)}) {
+    super();
     this._plugins = Object.keys(config.plugins).map(pluginName => require(pluginName)(config.plugins[pluginName]));
     this._wintersmith = Object.create(null);
   }
